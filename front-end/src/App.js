@@ -6,7 +6,6 @@ import Dashboard from "./component/Dashboard";
 import Home from "./Home";
 import Busmap from "./component/Busmap";
 import Buslist from "./component/Buslist";
-import BusDetails from "./component/BusDetails";
 import PassengerDetails from "./component/PassengerDetails";
 
 const App = () => (
@@ -18,7 +17,6 @@ const App = () => (
       <Route path="/Home" element={<Home />}/>
       <Route path="/Busmap" element={<Busmap />}/>
       <Route path="/Buslist" element={<Buslist />}/>
-      <Route path="/BusDetails" element={<BusDetails />}/>
       <Route path="/PassengerDetails" element={<PassengerDetails />}/>
     </Routes>
   </Router>
