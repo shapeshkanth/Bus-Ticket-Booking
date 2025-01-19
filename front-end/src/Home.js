@@ -9,31 +9,29 @@ function Home() {
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
-  const [route, setRoute] = useState(null); // Initialize with null since you're waiting for the data
+  const [route, setRoute] = useState(null); 
 
   useEffect(() => {
-    // Fetch bus routes data from the backend API
+   
     axios
-      .get("http://localhost:4000/api/bus-routes") // Adjust the API URL to match the backend route
+      .get("http://localhost:4000/api/bus-routes") 
       .then((response) => {
-        setRoute(response.data); // Store the response data
-        console.log(response.data); // Log only the data part
+        setRoute(response.data); 
+        console.log(response.data); 
       })
       .catch((error) => {
         console.error("Error fetching bus routes:", error);
       });
   }, []);
 
-  // Define routes
+  
   const routes = route ? route : {};
 
-  // Generate unique locations for datalist only if routes data is available
+  
   const allLocations = route ? [...new Set(Object.values(routes).flat())] : [];
 
  
-//   };
 
-  // Handle form submission
   const handleSearch = (e) => {
     e.preventDefault();
     if (!from || !to || !travelDate) {
@@ -43,18 +41,18 @@ function Home() {
     } else {
       let selectedRoute = null;
 
-      // Check which route the selected locations belong to
+      
       for (const key in routes) {
         const route = routes[key];
         if (route.includes(from.toLowerCase()) && route.includes(to.toLowerCase())) {
           const fromIndex = route.indexOf(from.toLowerCase());
           const toIndex = route.indexOf(to.toLowerCase());
           if (fromIndex < toIndex) {
-            // Extract the numeric part from the route key
-            const match = key.match(/\d+/); // This will match any sequence of digits
+            
+            const match = key.match(/\d+/); 
             
             if (match) {
-              selectedRoute = match[0]; // Store the numeric part
+              selectedRoute = match[0]; 
             }
             break;
           }
@@ -75,7 +73,7 @@ function Home() {
 
   return (
     <div>
-      {/* Header */}
+      
       <header className="flex justify-between w-full h-24 bg-black items-center px-4">
         <div className="flex items-center">
           <img
@@ -97,7 +95,7 @@ function Home() {
         </div>
       </header>
 
-      {/* Main Content */}
+      
       <main className="relative min-h-screen flex items-center justify-center">
         <img
           src="/images/wallpaper.jpg"
@@ -133,7 +131,7 @@ function Home() {
                 type="date"
                 id="travelDate"
                 value={travelDate}
-                // min={new Date().toISOString().split("T")[0]}
+                
                 onChange={(e) => setTravelDate(e.target.value)}
                 required
                 className="w-full p-2 rounded-md bg-teal-200"
@@ -154,7 +152,7 @@ function Home() {
         </div>
       </main>
 
-      {/* Footer */}
+     
       <footer className="bg-gray-800 text-white py-8 text-center">
         <h3 className="text-2xl font-semibold">B~Booking</h3>
         <p>Your trusted partner for seamless bus ticket booking.</p>
@@ -185,7 +183,7 @@ function Home() {
   );
 }
 
-// Reusable LocationInput Component
+
 const LocationInput = ({ id, label, value, onChange, datalistId, options }) => (
   <div>
     <label htmlFor={id} className="block text-lg font-medium">

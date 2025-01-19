@@ -9,17 +9,17 @@ const Busmap = () => {
      
 
 
-  // Predefined seats to show as `/images/chair3.png`
+  
   const predefinedSeats = bookedSeats ? bookedSeats : [];
 
-  // UseEffect to alert whenever selectedSeats state changes
+  
 
 
   useEffect(() => {
     console.log('Updated Selected Seats:', selectedSeats);
   }, [selectedSeats]);
 
-  // Toggles seat image and updates selected seats
+  
   function toggleImage(element) {
     const img = element.querySelector('img');
     if (!img) {
@@ -42,7 +42,7 @@ const Busmap = () => {
     }
   }
 
-  // Determines the initial image for a seat
+  
   const getSeatImage = (seatNumber) => {
     return predefinedSeats.includes(seatNumber)
       ? '/images/chair3.png'
@@ -362,7 +362,7 @@ const Busmap = () => {
             </div>
             <div className='flex justify-center'>
             <div className='border-1 border-orange-500 rounded-xl bg-orange-500 mb-10 mt-6 h-8 w-32 flex justify-center item-center'>
-            {/* <Link to="/PassengerDetails" state={{ selectedSeats }}>booking</Link> */}
+           
             {selectedSeats.length > 0 ? (
         <Link
           to={`/PassengerDetails?from=${encodeURIComponent(

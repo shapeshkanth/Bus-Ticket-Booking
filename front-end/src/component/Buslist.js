@@ -61,7 +61,7 @@ const Buslist = () => {
           {data.map((item, index) =>
             item.schedule && Object.keys(item.schedule).length > 0 ? (
               Object.keys(item.schedule).map((timeKey, ind) => {
-                // Dynamically calculate available seats for each time slot
+               
                 const availableSeats = getAvailableSeats(item.schedule, timeKey);
 
                 return (
