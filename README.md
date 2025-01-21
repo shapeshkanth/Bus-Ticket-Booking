@@ -36,7 +36,7 @@ This is a full-stack web application for booking bus tickets online. The project
 Ensure you have the following installed on your system:
 
 - Node.js
-- MongoDB (local or cloud-based e.g., MongoDB compas)
+- MongoDB (local or cloud-based e.g., MongoDB compass)
 
 ### Steps to Run Locally
 
@@ -48,23 +48,28 @@ Ensure you have the following installed on your system:
 
 ###  Create a .env file in the backend folder and add the following:
 
+ ```bash
 PORT=4000
 MONGO_URI=mongodb://localhost:27017/authDB
 JWT_SECRET=your_jwt_secret
+```
 
 ## Start the Backend Server
-
+ ```bash
 cd back-end
 node app.js
-
+```
 ## Start the front-end Application 
 Open another powershell
+ ```bash
 cd front-end
 npm start
+```
 
 Open your browser and visit http://localhost:3000/Home
 
 # Project Structure
+ ```bash
 bus-ticket-booking/
 │-- back-end/
 │   ├── config/
@@ -81,4 +86,5 @@ bus-ticket-booking/
 │   └── .env
 │
 └── README.md
+```
 
