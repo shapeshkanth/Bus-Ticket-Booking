@@ -40,7 +40,7 @@ Ensure you have the following installed on your system:
 
 ### Steps to Run Locally
 
- **Clone the Repository:**
+1. **Clone the Repository**
 
    ```bash
    git clone https://github.com/shapeshkanth/Bus-Ticket-Booking.git
